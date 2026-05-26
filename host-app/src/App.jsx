@@ -4,7 +4,7 @@ import { Button } from 'shared-ui'; // ◄ Common component used in host
 import { loadRemote } from '@module-federation/runtime';
 
 // Runtime Micro-frontend streaming
- const LoginCard = React.lazy(() => import('auth_mfe/LoginCard'));
+ const LoginCard = React.lazy(() => import('auth_mfe/Auth'));
 // const remoteModule = 'auth_mfe/LoginCard';
 // const LoginCard = React.lazy(() => import(/* @vite-ignore */ `${remoteModule}`));
 // const LoginCard = React.lazy(() => 

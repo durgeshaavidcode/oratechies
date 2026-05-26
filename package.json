@@ -15,17 +15,14 @@
     "dev:auth": "npm --workspace=auth-mfe run dev -- --host",
     "dev:admin": "vite dev admin-mfe --port 5002",
     "dev": "concurrently \"npm:dev:host\" \"npm:dev:auth\" \"npm:dev:admin\"",
-    
     "build:host": "vite build host-app",
     "build:auth": "vite build auth-mfe",
     "build:admin": "vite build admin-mfe",
     "build": "npm run build:host && npm run build:auth && npm run build:admin",
-    
     "preview:host": "vite preview host-app --port 5000",
     "preview:auth": "vite preview auth-mfe --port 5001",
     "preview:admin": "vite preview admin-mfe --port 5002",
     "preview": "concurrently \"npm:preview:host\" \"npm:preview:auth\" \"npm:preview:admin\"",
-    
     "prepare": "husky install"
   },
   "repository": {
@@ -47,16 +44,29 @@
     "url": "https://github.com/durgeshaavidcode/orctechies/issues"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^9.0.1",
+    "@mui/material": "^9.0.1",
+    "clsx": "^2.1.1",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-scripts": "^5.0.1",
+    "tailwind-merge": "^3.6.0",
     "vite": "^8.0.14"
   },
   "devDependencies": {
     "@originjs/vite-plugin-federation": "^1.4.1",
+    "@tailwindcss/vite": "^4.3.0",
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.2",
     "autoprefixer": "^10.4.18",
     "concurrently": "^8.2.2",
-    "husky": "^9.1.7"
+    "husky": "^9.1.7",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^6.0.3",
+    "vite-plugin-singlefile": "^2.3.3"
   }
 }

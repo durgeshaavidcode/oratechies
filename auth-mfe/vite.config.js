@@ -10,7 +10,7 @@ export default defineConfig({
       name: 'auth_mfe',
       filename: 'remoteEntry.js',
       exposes: {
-        './LoginCard': './src/components/LoginCard.jsx',
+        './Auth': './src/index.jsx',
       },
       shared: ['react', 'react-dom'],
     }),

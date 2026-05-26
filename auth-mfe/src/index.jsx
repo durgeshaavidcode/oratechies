@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import "./index.css";
+import App from './App.jsx';
 
-export default function AuthApp() {
-  return <div>Auth Microfrontend</div>;
-}
+const root = ReactDOM.createRoot(document.getElementById('_oratechies-root'));
 
-const rootElement = document.getElementById('_oratechies-root');
-if (rootElement) {
-  const root = ReactDOM.createRoot(rootElement);
-  root.render(<AuthApp />);
-}
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
