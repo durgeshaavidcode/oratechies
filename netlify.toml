@@ -3,7 +3,7 @@
 
 [build]
   publish = "host-app/dist"
-  command = "npm install --prefix shared-component && npm install --prefix admin-mfe && npm install --prefix auth-mfe && npm install --prefix host-app && npm run build --prefix host-app"
+  command = "npm install --legacy-peer-deps --prefix shared-component && npm install --legacy-peer-deps --prefix admin-mfe && npm install --legacy-peer-deps --prefix auth-mfe && npm install --legacy-peer-deps --prefix host-app && npm run build --prefix host-app"
 
 # Redirect all requests to index.html for SPA
 [[redirects]]
