@@ -29,6 +29,7 @@ export default defineConfig({
   build: {
     target: ['es2020', 'edge88', 'firefox78', 'chrome87', 'safari14'],
     cssTarget: 'safari14',
-    minify: false
+    minify: false,
+    modulePreload: false,
   }
 });
