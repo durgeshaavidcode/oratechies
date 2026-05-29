@@ -1,9 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
+import { Provider } from 'react-redux';
+import { CssBaseline } from '@mui/material';
+import { store } from './store';
+import AppRouter from './routes/Router';
 
-ReactDOM.createRoot(document.getElementById('_oratechies-root')).render(
+const root = ReactDOM.createRoot(document.getElementById('_oratechies-root'));
+
+root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <CssBaseline />
+      <AppRouter />
+    </Provider>
   </React.StrictMode>
 );

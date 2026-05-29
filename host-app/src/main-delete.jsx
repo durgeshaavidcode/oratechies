@@ -34,4 +34,4 @@ init({
 });
 
 // Boot the React tree safely
-import('./bootstrap.jsx');
+import('./index.jsx');

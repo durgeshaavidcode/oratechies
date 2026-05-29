@@ -22,11 +22,12 @@ const LoginForm: React.FC = () => {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle login logic
-    console.log({ email, password, rememberMe });
+    // Avoid passing objects directly to console.log to prevent devtools hook errors
+    console.log('Login attempt:', JSON.stringify({ email, password, rememberMe }));
   };
 
   const handleSocialLogin = (provider: string) => {
-    console.log(`Login with ${provider}`);
+    console.log('Login with provider:', provider);
   };
 
   return (
