@@ -12,11 +12,9 @@
   force = true
 # Netlify configuration file for monorepo deployment
 
-
 [build]
   publish = "host-app/dist"
-  command = "npm install --legacy-peer-deps --prefix shared-component && npm install --legacy-peer-deps --prefix admin-mfe && npm install --legacy-peer-deps --prefix auth-mfe && npm install --legacy-peer-deps --prefix host-app && npm run build --prefix admin-mfe && npm run build --prefix auth-mfe && npm run build --prefix host-app && mkdir -p host-app/dist/auth-mfe host-app/dist/admin-mfe && cp -R auth-mfe/dist/* host-app/dist/auth-mfe/ && cp -R admin-mfe/dist/* host-app/dist/admin-mfe/"
-
+  command = "npm install --legacy-peer-deps --prefix shared-component && npm install --legacy-peer-deps --prefix admin-mfe && npm install --legacy-peer-deps --prefix auth-mfe && npm install --legacy-peer-deps --prefix host-app && npm run build --prefix host-app"
 # Redirect all requests to index.html for SPA
 [[redirects]]
   from = "/api/*"
