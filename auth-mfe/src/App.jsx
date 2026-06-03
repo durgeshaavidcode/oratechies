@@ -14,7 +14,7 @@ const theme = createTheme({
   },
 });
 
-const App = () => {
+const App = ({ handleLogin }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -80,7 +80,7 @@ const App = () => {
               py: { xs: 3.5, sm: 4.5 },
             }}
           >
-            <LoginForm />
+            <LoginForm handleLogin={handleLogin} />
           </Box>
         </Box>
       </Box>

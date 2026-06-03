@@ -14,26 +14,29 @@ import {
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import SocialLoginButton from './SocialLoginButton';
 
-const LoginForm: React.FC = () => {
+const LoginForm: React.FC<{ handleLogin?: (e?: React.FormEvent) => void }> = ({ handleLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
 
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle login logic
-    // Avoid passing objects directly to console.log to prevent devtools hook errors
-    console.log('Login attempt:', JSON.stringify({ email, password, rememberMe }));
+  const handleSocialLogin = () => {
+    console.log('Login with provider:');
+    if (handleLogin) {
+      handleLogin();
+    }
   };
 
-  const handleSocialLogin = (provider: string) => {
-    console.log('Login with provider:', provider);
+  const handleSubmitClick = (e: React.FormEvent) => {
+    // e.preventDefault();
+    if (handleLogin) {
+      handleLogin(e);
+    }
   };
 
   return (
     <Box
       component="form"
-      onSubmit={handleLogin}
+      onSubmit={handleSubmitClick}
       sx={{
         width: '100%',
         maxWidth: 440,
@@ -200,8 +203,8 @@ const LoginForm: React.FC = () => {
 
       {/* Social Login Buttons */}
       <Stack spacing={1.5} sx={{ mb: 3 }}>
-        <SocialLoginButton provider="linkedin" onClick={() => handleSocialLogin('LinkedIn')} />
-        <SocialLoginButton provider="google" onClick={() => handleSocialLogin('Google')} />
+        <SocialLoginButton provider="linkedin" onClick={handleSocialLogin} />
+        <SocialLoginButton provider="google" onClick={handleSocialLogin} />
       </Stack>
 
       {/* Create Account */}
