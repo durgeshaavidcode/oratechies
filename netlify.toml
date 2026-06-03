@@ -1,20 +1,20 @@
-# Proxy micro-frontend remote entries and assets to local dev servers
-[[redirects]]
-  from = "/auth-mfe/*"
-  to = "http://localhost:5001/:splat"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/admin-mfe/*"
-  to = "http://localhost:5002/:splat"
-  status = 200
-  force = true
+# Local dev proxies (commented out for production)
+# [[redirects]]
+#   from = "/auth-mfe/*"
+#   to = "http://localhost:5001/:splat"
+#   status = 200
+#   force = true
+#
+# [[redirects]]
+#   from = "/admin-mfe/*"
+#   to = "http://localhost:5002/:splat"
+#   status = 200
+#   force = true
 # Netlify configuration file for monorepo deployment
 
 [build]
   publish = "host-app/dist"
-  command = "npm install --legacy-peer-deps --prefix shared-component && npm install --legacy-peer-deps --prefix admin-mfe && npm install --legacy-peer-deps --prefix auth-mfe && npm install --legacy-peer-deps --prefix host-app && npm run build --prefix host-app"
+  command = "npm install --legacy-peer-deps && npm run build:auth && npm run build:admin && npm run build:host && mkdir -p host-app/dist/auth-mfe && mkdir -p host-app/dist/admin-mfe && cp -R auth-mfe/dist/* host-app/dist/auth-mfe/ 2>/dev/null || true && cp -R admin-mfe/dist/* host-app/dist/admin-mfe/ 2>/dev/null || true"
 # Redirect all requests to index.html for SPA
 [[redirects]]
   from = "/api/*"
