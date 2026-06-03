@@ -20,7 +20,7 @@ const REMOTE_HOST = process.env.REMOTE_HOST || getLocalIPAddress() || 'localhost
 export default defineConfig(({ mode }) => {
 	const remoteEntryPath =
 		mode === 'production'
-			? `http://${REMOTE_HOST}:5001/assets/remoteEntry.js`
+			? `https://oratechies.netlify.app/assets/remoteEntry.js`
 			: `http://${REMOTE_HOST}:5001/remoteEntry.js`;
 
 	const adminRemoteEntryPath =
