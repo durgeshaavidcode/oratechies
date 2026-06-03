@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 
 const CandidateLandingPage = React.lazy(() => import('../views/candidate/landing-page'));
@@ -26,15 +26,17 @@ const AuthRoute = () => {
 
 const AppRouter = () => {
   return (
-    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}> 
-      <Routes>
-        <Route path="/" element={<CandidateLandingPage />} />
-        <Route path="/dashboard" element={<CandidateDashboard />} />
-        <Route path="/applications" element={<CandidateApplications />} />
-        <Route path="/profile/edit" element={<EditProfilePage />} />
-        <Route path="/jobs" element={<JobsListPage />} />
-        <Route path="/auth" element={<AuthRoute />} />
-      </Routes>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<CandidateLandingPage />} />
+          <Route path="/dashboard" element={<CandidateDashboard />} />
+          <Route path="/applications" element={<CandidateApplications />} />
+          <Route path="/profile/edit" element={<EditProfilePage />} />
+          <Route path="/jobs" element={<JobsListPage />} />
+          <Route path="/auth" element={<AuthRoute />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 };
