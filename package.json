@@ -15,7 +15,7 @@
     "dev:auth": "npm --workspace=auth-mfe run dev -- --host",
     "dev:admin": "vite dev admin-mfe --port 5002",
     "dev": "concurrently \"npm:dev:host\" \"npm:dev:auth\" \"npm:dev:admin\"",
-    "build:host": "vite build host-app",
+    "build:host": "set \"REMOTE_HOST=oratechies.netlify.app\" && vite build host-app",
     "build:auth": "vite build auth-mfe",
     "build:admin": "vite build admin-mfe",
     "build": "npm run build:host && npm run build:auth && npm run build:admin",

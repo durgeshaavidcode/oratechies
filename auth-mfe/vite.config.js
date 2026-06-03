@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react';
 import federation from '@originjs/vite-plugin-federation';
 
 export default defineConfig({
-  base: 'http://localhost:5001/',
   plugins: [
     react(),
     federation({
@@ -16,12 +15,13 @@ export default defineConfig({
     }),
   ],
   server: {
+    host: true,
     port: 5001,
     strictPort: true,
-    // host: true,
     cors: true // Allow host-app to bypass cross-origin blocks
   },
   preview: {
+    host: true,
     port: 5001,
     strictPort: true,
     cors: true
