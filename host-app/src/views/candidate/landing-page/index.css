@@ -129,7 +129,7 @@
 
 
 /* Responsive */
-@media (min-width: 100px) and (max-width: 900px) {
+@media (min-width: 100px) and (max-width: 1000px) {
   .jf-main { grid-template-columns: 1fr; }
   .jf-jobs { grid-template-columns: 1fr; }
   .jf-filters { position: static; }
