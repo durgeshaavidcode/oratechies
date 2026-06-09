@@ -13,6 +13,7 @@ import {
   Box,
   Menu,
   MenuItem,
+  Drawer,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
@@ -25,6 +26,7 @@ import "./Header.css";
 import StyledButton from "../button/Button";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import React from "react";
+import SideDrawer from "../drawer/Drawer";
 
 
 const HomeIcon = (props) => {
@@ -48,6 +50,9 @@ export default function Header() {
       <AppBar position="sticky" className="jf-appbar">
         <Toolbar className="jf-toolbar">
           <div className="jf-logo-container">
+             
+            <div class="jf-nav-drawer"><SideDrawer/></div>
+
             <HomeIcon className="jf-logo"/>
           </div>
           <Box>
