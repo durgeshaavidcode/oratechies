@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 
-export default function StyledButton({ children, onClick, variant = 'contained' }) {
+export default function StyledButton({ children, onClick, variant = '', ...rest }) {
   const containedStyle = {
 				backgroundColor: (theme) =>
 					theme.palette.mode === 'light' ? '#d8030b' : '#424242', 
@@ -31,10 +31,11 @@ export default function StyledButton({ children, onClick, variant = 'contained' 
       }
 	return (
 		<Button
-			variant={variant}
+      variant={variant}
       fullWidth
       sx={variant === 'contained' ? containedStyle : outlinedStyle}
-
+      onClick={onClick}
+      {...rest}
 		>
 			{children}
 		</Button>

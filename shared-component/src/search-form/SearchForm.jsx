@@ -11,7 +11,7 @@ import MultipleSelectCheckmark from '../multi-select-checkmark/MultiSelectCheckm
 export default function SearchForm() {
 	return (
 		<Grid container spacing={2}>
-			<Grid size={{ xs: 6, md: 3, lg: 4 }}>
+			<Grid size={{ xs: 12, md: 3, lg: 4 }}>
 				<TextField
 					placeholder="Job title or keyword"
 					size="small"
@@ -27,10 +27,10 @@ export default function SearchForm() {
 					}}
 				/>
 			</Grid>
-			<Grid size={{ xs: 6, md: 3, lg: 3 }}>
+			<Grid size={{ xs: 12, md: 3, lg: 3 }}>
 				<MultipleSelectCheckmark />
 			</Grid>
-			<Grid size={{ xs: 6, md: 3, lg: 3 }}>
+			<Grid size={{ xs: 12, md: 3, lg: 3 }}>
 				<TextField
 					placeholder="Location"
 					size="small"
@@ -47,7 +47,7 @@ export default function SearchForm() {
 				/>
 			</Grid>
 			<Grid size={{ xs: 12, md: 3, lg: 2 }}>
-				<StyledButton>Search Job</StyledButton>
+				<StyledButton variant="contained">Search Job</StyledButton>
 			</Grid>
 		</Grid>
 	);

@@ -18,19 +18,12 @@
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Chips */
-.jf-chip-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.jf-search-container {
+  background-color: var(--neutral-0);
   margin-top: 24px;
-}
-
-
-.jf-subtitle {
-  color: var(--neutral-500);
-  margin-top: 16px !important;
-  font-size: 14px !important;
+  padding: 16px;
+  border-radius: 12px;
+  width: 80%;
 }
 
 /* Layout */
@@ -129,10 +122,25 @@
 
 
 /* Responsive */
-@media (min-width: 100px) and (max-width: 1000px) {
+@media (min-width: 100px) and (max-width: 900px) {
   .jf-main { grid-template-columns: 1fr; }
   .jf-jobs { grid-template-columns: 1fr; }
   .jf-filters { position: static; }
   .jf-nav-link { display: none !important; }
   .jf-nav-drawer { display: block !important; }
+  .jf-search-container { width: 100%; }
+
+  .jf-root { font-size: 16px; }
+  .jf-job-title { font-size: 18px !important; }
+  .jf-subtitle,
+  .jf-job-meta,
+  .jf-job-desc,
+  .jf-filter-item,
+  .jf-filters h6,
+  .jf-tag {
+    font-size: 15px !important;
+  }
+  .jf-tag {
+    height: 28px !important;
+  }
 }

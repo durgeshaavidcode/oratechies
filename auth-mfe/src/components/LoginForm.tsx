@@ -12,7 +12,7 @@ import {
   Alert,
 } from '@mui/material';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
-import SocialLoginButton from './SocialLoginButton';
+import StyledButton from 'shared-ui/src/button/Button';
 
 const LoginForm: React.FC<{ handleLogin?: (e?: React.FormEvent) => void }> = ({ handleLogin }) => {
   const [email, setEmail] = useState('');
@@ -33,6 +33,8 @@ const LoginForm: React.FC<{ handleLogin?: (e?: React.FormEvent) => void }> = ({ 
     }
   };
 
+  const noOps = () => {};
+
   return (
     <Box
       component="form"
@@ -40,7 +42,7 @@ const LoginForm: React.FC<{ handleLogin?: (e?: React.FormEvent) => void }> = ({ 
       sx={{
         width: '100%',
         maxWidth: 440,
-        mx: 'auto',
+        mx: 'auto'
       }}
     >
       {/* Header */}
@@ -54,7 +56,7 @@ const LoginForm: React.FC<{ handleLogin?: (e?: React.FormEvent) => void }> = ({ 
           fontSize: { xs: '1.75rem', md: '2rem' },
         }}
       >
-        Welcome Back 👋
+        Welcome Back!
       </Typography>
       <Typography
         variant="body1"
@@ -136,7 +138,7 @@ const LoginForm: React.FC<{ handleLogin?: (e?: React.FormEvent) => void }> = ({ 
               sx={{
                 color: '#ccc',
                 '&.Mui-checked': {
-                  color: '#F5820D',
+                  color: '#d8030b',
                 },
               }}
             />
@@ -151,11 +153,11 @@ const LoginForm: React.FC<{ handleLogin?: (e?: React.FormEvent) => void }> = ({ 
           href="#"
           underline="none"
           sx={{
-            color: '#0066cc',
+            color: '#d8030b',
             fontSize: '0.9rem',
             fontWeight: 600,
             '&:hover': {
-              color: '#F5820D',
+              color: '#0066cc',
             },
           }}
         >
@@ -164,27 +166,15 @@ const LoginForm: React.FC<{ handleLogin?: (e?: React.FormEvent) => void }> = ({ 
       </Box>
 
       {/* Login Button */}
-      <Button
+      <StyledButton
         type="submit"
+          onClick={noOps}
         fullWidth
         variant="contained"
         size="large"
-        sx={{
-          py: 1.5,
-          borderRadius: '8px',
-          backgroundColor: '#F5820D',
-          fontSize: '1rem',
-          fontWeight: 700,
-          textTransform: 'none',
-          boxShadow: '0 4px 14px rgba(245, 130, 13, 0.35)',
-          '&:hover': {
-            backgroundColor: '#e0750b',
-            boxShadow: '0 6px 20px rgba(245, 130, 13, 0.45)',
-          },
-        }}
       >
         Login
-      </Button>
+      </StyledButton>
 
       {/* Divider */}
       <Divider
@@ -202,10 +192,10 @@ const LoginForm: React.FC<{ handleLogin?: (e?: React.FormEvent) => void }> = ({ 
       </Divider>
 
       {/* Social Login Buttons */}
-      <Stack spacing={1.5} sx={{ mb: 3 }}>
+      {/* <Stack spacing={1.5} sx={{ mb: 3 }}>
         <SocialLoginButton provider="linkedin" onClick={handleSocialLogin} />
         <SocialLoginButton provider="google" onClick={handleSocialLogin} />
-      </Stack>
+      </Stack> */}
 
       {/* Create Account */}
       <Typography
@@ -223,10 +213,10 @@ const LoginForm: React.FC<{ handleLogin?: (e?: React.FormEvent) => void }> = ({ 
           href="#"
           underline="none"
           sx={{
-            color: '#0066cc',
+            color: '#d8030b',
             fontWeight: 700,
             '&:hover': {
-              color: '#F5820D',
+              color: '#0066cc',
             },
           }}
         >

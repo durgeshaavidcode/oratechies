@@ -11,6 +11,10 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
+import LoginIcon from "@mui/icons-material/Login";
+import PersonAddAlt1Icon from "@mui/icons-material/PersonAddAlt1";
+import { Link } from 'react-router-dom';
+import StyledButton from '../button/Button';
 
 export default function SideDrawer() {
 	const [open, setOpen] = React.useState(false);
@@ -55,6 +59,19 @@ export default function SideDrawer() {
 					</ListItem>
 				))}
 			</List>
+			<Divider />
+			<List>
+				<Box  sx={{ m: 2 }}>
+					<Link key="/auth" to="/auth" className="jf-signin">
+						<StyledButton startIcon={<LoginIcon />} variant="outlined">Login</StyledButton>
+					</Link>
+				</Box>
+				<Box sx={{ m: 2 }}>
+					<Link key="/auth" to="/auth" className="jf-signin">
+						<StyledButton startIcon={<PersonAddAlt1Icon />}>Sign in</StyledButton>
+					</Link>
+				</Box>
+			</List>
 		</Box>
 	);
 
@@ -63,7 +80,7 @@ export default function SideDrawer() {
 			<Button onClick={toggleDrawer(true)}>
 				<MenuIcon color="action" />
 			</Button>
-			<Drawer open={open} onClose={toggleDrawer(false)}>
+			<Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
 				{DrawerList}
 			</Drawer>
 		</div>

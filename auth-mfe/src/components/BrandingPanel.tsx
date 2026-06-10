@@ -1,11 +1,13 @@
 import React from 'react';
 import { Box, Typography, Stack } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
+import OratechiesLogo from 'shared-ui/assets/oratechies-bg.png';
 
 const features = [
   '100% Oracle Jobs',
   'Verified Recruiters',
   'Zero Candidate Fees',
+  'Accelerate Your Career',
 ];
 
 const BrandingPanel: React.FC = () => {
@@ -20,6 +22,10 @@ const BrandingPanel: React.FC = () => {
         px: { xs: 4, md: 6, lg: 8 },
         py: { xs: 5, md: 6 },
         overflow: 'hidden',
+        backgroundImage: `url(${OratechiesLogo})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        width: '100%',
       }}
     >
       {/* Decorative gradient circles */}
@@ -54,29 +60,36 @@ const BrandingPanel: React.FC = () => {
           variant="h3"
           component="h2"
           sx={{
-            fontWeight: 800,
             color: '#ffffff',
             mb: 1.5,
             fontSize: { xs: '2rem', md: '2.5rem', lg: '2.8rem' },
             letterSpacing: '-0.5px',
           }}
         >
-          Oratechies
+          Your next career move.
         </Typography>
 
         <Typography
-          variant="h6"
+          variant="h4"
           sx={{
-            color: 'rgba(255, 255, 255, 0.7)',
-            fontWeight: 400,
-            mb: 6,
-            fontSize: { xs: '1rem', md: '1.15rem' },
+            color: 'rgba(138, 133, 133, 0.7)',
+            fontWeight: 600,
+            fontSize: { xs: '1.25rem', md: '1.75rem' },
+            mb: 3,
           }}
         >
-          The Home of Oracle Careers
+          Powered by Oracle.
+        </Typography>
+        <Typography sx={{
+            color: '#ffffff',}}>
+          India's most trusted platform for 100% Oracle jobs.
+        </Typography>
+        <Typography sx={{
+            color: '#ffffff',}}>
+          Connect with top employers, build your future with Oracle.
         </Typography>
 
-        <Stack spacing={2}>
+        <Stack spacing={2} sx={{ mt: 4 }}>
           {features.map((feature) => (
             <Box
               key={feature}

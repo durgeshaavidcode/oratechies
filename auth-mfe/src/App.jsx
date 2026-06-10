@@ -1,7 +1,12 @@
 import React from 'react';
-import { Box, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { Box, CssBaseline, Grid, Paper, Stack, ThemeProvider, Typography, createTheme } from '@mui/material';
 import BrandingPanel from './components/BrandingPanel';
 import LoginForm from './components/LoginForm';
+import WorkIcon from '@mui/icons-material/Work';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
+import BusinessIcon from '@mui/icons-material/Business';
+import { Footer } from 'shared-ui';
 
 const theme = createTheme({
   typography: {
@@ -13,6 +18,13 @@ const theme = createTheme({
     },
   },
 });
+
+const stats = [
+  { icon: <WorkIcon />, value: "2,450+", label: "Active Oracle Jobs" },
+  { icon: <BusinessIcon />, value: "350+", label: "Oracle Hiring Companies" },
+  { icon: <PeopleAltIcon />, value: "95,000+", label: "Professionals Placed" },
+  { icon: <VerifiedUserIcon />, value: "100%", label: "Oracle Jobs. Only Oracle." },
+];
 
 const App = ({ handleLogin }) => {
   return (
@@ -31,8 +43,7 @@ const App = ({ handleLogin }) => {
         <Box
           sx={{
             flex: { xs: 'none', md: '0 0 48%', lg: '0 0 50%' },
-            background: 'linear-gradient(160deg, #0a1628 0%, #0d2137 40%, #0f2b4a 70%, #0a1e36 100%)',
-            minHeight: { xs: '280px', sm: '320px', md: '100vh' },
+            minHeight: { xs: '280px', md: '100vh' },
             position: 'relative',
             display: 'flex',
             alignItems: 'center',
@@ -83,7 +94,34 @@ const App = ({ handleLogin }) => {
             <LoginForm handleLogin={handleLogin} />
           </Box>
         </Box>
+        
       </Box>
+      <Box sx={{m: 4}}>
+          <Paper elevation={2} sx={{ p: { xs: 2, md: 2.5 }, borderRadius: 2 }}>
+                    <Grid container spacing={2}>
+                      {stats.map((s) => (
+                        <Grid key={s.label} size={{ xs: 6, md: 3 }}>
+                          <Stack direction="row" spacing={2} sx={{ alignItems: 'center', borderRight: '1px solid #e0e0e0'}}>
+                            <Box sx={{ color: '#d8030b', display: 'flex' }}>
+                              {s.icon}
+                            </Box>
+                            <Box>
+                              <Typography
+                                sx={{ fontWeight: 800, fontSize: { xs: 18, md: 22 } }}
+                              >
+                                {s.value}
+                              </Typography>
+                              <Typography variant="caption" color="text.secondary">
+                                {s.label}
+                              </Typography>
+                            </Box>
+                          </Stack>
+                        </Grid>
+                      ))}
+                    </Grid>
+                  </Paper>
+        </Box>
+        <Footer />
     </ThemeProvider>
   );
 };
