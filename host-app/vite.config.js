@@ -15,7 +15,7 @@ function getLocalIPAddress() {
 	return undefined;
 }
 
-const REMOTE_HOST = process.env.REMOTE_HOST || getLocalIPAddress() || 'localhost';
+const REMOTE_HOST = 'localhost';
 
 export default defineConfig(({ mode }) => {
 	const remoteEntryPath =
@@ -23,10 +23,12 @@ export default defineConfig(({ mode }) => {
 			? `https://oratechies.netlify.app/auth-mfe/assets/remoteEntry.js`
 			: `http://${REMOTE_HOST}:5001/remoteEntry.js`;
 
-	const adminRemoteEntryPath =
-		mode === 'production'
-			? `https://oratechies.netlify.app/admin-mfe/assets/remoteEntry.js`
-			: `http://${REMOTE_HOST}:5002/remoteEntry.js`;
+	const adminRemoteEntryPath = `http://${REMOTE_HOST}:5002/remoteEntry.js`;
+
+	// const adminRemoteEntryPath =
+	// 	mode == 'production'
+	// 		? `https://oratechies.netlify.app/admin-mfe/assets/remoteEntry.js`
+	// 		: `http://${REMOTE_HOST}:5002/remoteEntry.js`;
 
 	return {
 		plugins: [
@@ -37,12 +39,7 @@ export default defineConfig(({ mode }) => {
 					auth_mfe: remoteEntryPath,
 					admin_mfe: adminRemoteEntryPath,
 				},
-				shared: {
-					react: { singleton: true, requiredVersion: '^19.2.6' },
-					'react-dom': { singleton: true, requiredVersion: '^19.2.6' },
-					'react-router-dom': { singleton: true, requiredVersion: '^6.26.0' },
-					'react-redux': { singleton: true, requiredVersion: '^9.3.0' },
-				},
+				shared: ['react', 'react-dom', 'react-router-dom', 'react-redux'],
 			}),
 			{
 				name: 'force-cors',

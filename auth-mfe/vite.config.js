@@ -11,12 +11,7 @@ export default defineConfig({
       exposes: {
         './Auth': './src/Auth.jsx',
       },
-      shared: {
-        react: { singleton: true, requiredVersion: '^19.2.6' },
-        'react-dom': { singleton: true, requiredVersion: '^19.2.6' },
-        'react-router-dom': { singleton: true, requiredVersion: '^6.26.0' },
-        'react-redux': { singleton: true, requiredVersion: '^9.3.0' },
-      },
+      shared: ['react', 'react-dom', 'react-router-dom', 'react-redux'],
     }),
   ],
   server: {
