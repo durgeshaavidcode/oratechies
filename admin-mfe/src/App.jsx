@@ -14,15 +14,15 @@ export default function App() {
 		<Routes>
 			<Route element={<AdminLayout />}>
 				<Route path="/" element={<Dashboard />} />
-				<Route path="/admin-dashboard" element={<Dashboard />} />
-				<Route path="/admin-users" element={<Users />} />
-				<Route path="/admin-users/:id" element={<UserDetail />} />
-				<Route path="/admin-company-kyc" element={<CompanyKYC />} />
-				<Route path="/admin-company-kyc/:id" element={<CompanyKYCReview />} />
-				<Route path="/admin-jobs" element={<JobManagement />} />
-				<Route path="/admin-reports" element={<Reports />} />
-				<Route path="/admin-settings" element={<Settings />} />
-				{/* <Route path="*" element={<Navigate to="/admin-dashboard" replace />} /> */}
+				<Route path="/dashboard" element={<Dashboard />} />
+				<Route path="/users" element={<Users />} />
+				<Route path="/users/:id" element={<UserDetail />} />
+				<Route path="/company-kyc" element={<CompanyKYC />} />
+				<Route path="/company-kyc/:id" element={<CompanyKYCReview />} />
+				<Route path="/jobs" element={<JobManagement />} />
+				<Route path="/reports" element={<Reports />} />
+				<Route path="/settings" element={<Settings />} />
+				{/* <Route path="*" element={<Navigate to="/dashboard" replace />} /> */}
 			</Route>
 		</Routes>
 	);
