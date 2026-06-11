@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import RemoteErrorBoundary from '../utils/RemoteErrorBoundary';
 
 const CandidateLandingPage = React.lazy(() => import('../views/candidate/landing-page'));
 const CandidateDashboard = React.lazy(() => import('../views/candidate/dashboard'));
@@ -36,7 +37,16 @@ const AppRouter = () => {
           <Route path="/profile/edit" element={<EditProfilePage />} />
           <Route path="/jobs" element={<JobsListPage />} />
           <Route path="/auth" element={<AuthRoute />} />
-          <Route path="/admin" element={<AdminPage />} />
+          <Route
+            path="/admin/*"
+            element={
+              <RemoteErrorBoundary>
+                <Suspense fallback={<div style={{ padding: '20px' }}>Loading admin...</div>}>
+                  <AdminPage />
+                </Suspense>
+              </RemoteErrorBoundary>
+            }
+          />
         </Routes>
       </Suspense>
     </BrowserRouter>
