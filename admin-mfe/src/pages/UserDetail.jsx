@@ -41,7 +41,7 @@ export default function UserDetail() {
   return (
     <Box>
       <Breadcrumbs sx={{ mb: 2 }}>
-        <Link component={RouterLink} to="/a/users" underline="hover" sx={{ color: "primary.main", fontWeight: 600 }}>
+        <Link component={RouterLink} to="/admin-users" underline="hover" sx={{ color: "primary.main", fontWeight: 600 }}>
           Users
         </Link>
         <Typography sx={{ color: "text.primary", fontWeight: 600 }}>User Details</Typography>
