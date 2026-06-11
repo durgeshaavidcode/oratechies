@@ -3,14 +3,13 @@ import react from '@vitejs/plugin-react';
 import federation from '@originjs/vite-plugin-federation';
 
 export default defineConfig({
-    base: 'http://localhost:5002/',
   plugins: [
     react(),
     federation({
       name: 'admin_mfe',
       filename: 'remoteEntry.js',
       exposes: {
-        './admin': './src/index.jsx',
+        './Admin': './src/Admin.jsx',
       },
       shared: ['react', 'react-dom', 'react-router-dom'],
     }),
@@ -18,10 +17,11 @@ export default defineConfig({
   server: {
     port: 5002,
     strictPort: true,
-    // host: true,
+    host: true,
     cors: true
   },
   preview: {
+    host: true,
     port: 5002,
     strictPort: true,
     cors: true

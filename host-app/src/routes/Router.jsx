@@ -7,6 +7,7 @@ const CandidateApplications = React.lazy(() => import('../views/candidate/applic
 const EditProfilePage = React.lazy(() => import('../views/candidate/profile'));
 const JobsListPage = React.lazy(() => import('../views/candidate/job'));
 const LoginCard = React.lazy(() => import('auth_mfe/Auth'));
+const AdminPage = React.lazy(() => import('admin_mfe/Admin'));
 
 const AuthRoute = () => {
   const navigate = useNavigate();
@@ -35,6 +36,7 @@ const AppRouter = () => {
           <Route path="/profile/edit" element={<EditProfilePage />} />
           <Route path="/jobs" element={<JobsListPage />} />
           <Route path="/auth" element={<AuthRoute />} />
+          <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

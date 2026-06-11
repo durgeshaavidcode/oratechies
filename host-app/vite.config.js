@@ -35,7 +35,7 @@ export default defineConfig(({ mode }) => {
 				name: 'host_app',
 				remotes: {
 					auth_mfe: remoteEntryPath,
-					adminMfe: adminRemoteEntryPath,
+					admin_mfe: adminRemoteEntryPath,
 				},
 				shared: ['react', 'react-dom', 'react-router-dom'],
 			}),
