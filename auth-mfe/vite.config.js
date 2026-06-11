@@ -15,6 +15,7 @@ export default defineConfig({
         react: { singleton: true, requiredVersion: '^19.2.6' },
         'react-dom': { singleton: true, requiredVersion: '^19.2.6' },
         'react-router-dom': { singleton: true, requiredVersion: '^6.26.0' },
+        'react-redux': { singleton: true, requiredVersion: '^9.3.0' },
       },
     }),
   ],
