@@ -12,8 +12,8 @@ import { Suspense } from 'react';
 
 export default function App() {
 	return (
-		// <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-		// 	<Suspense fallback={<div>Loading...</div>}>
+		<BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+			<Suspense fallback={<div>Loading...</div>}>
 				<Routes>
 					<Route element={<AdminLayout />}>
 						<Route path="/a/" element={<Navigate to="/a/dashboard" replace />} />
@@ -28,7 +28,7 @@ export default function App() {
 						{/* <Route path="*" element={<Navigate to="/a/dashboard" replace />} /> */}
 					</Route>
 				</Routes>
-		// 	</Suspense>
-		// </BrowserRouter>
+			</Suspense>
+		</BrowserRouter>
 	);
 }
