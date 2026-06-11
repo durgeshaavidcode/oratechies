@@ -116,7 +116,7 @@ export default function CompanyKYC() {
                     <Typography sx={{ color: "text.secondary", fontSize: 13 }}>{c.time}</Typography>
                   </TableCell>
                   <TableCell align="right">
-                    <Button variant="contained" size="small" onClick={() => nav(`/admin-company-kyc/${c.id}`)}>
+                    <Button variant="contained" size="small" onClick={() => nav(`/admin/company-kyc/${c.id}`)}>
                       Review
                     </Button>
                   </TableCell>

@@ -38,15 +38,15 @@ import { ADMIN } from "../data/mockData";
 const DRAWER_WIDTH = 248;
 
 const NAV = [
-  { to: "/admin-dashboard", label: "Dashboard", icon: <DashboardIcon /> },
-  { to: "/admin-users", label: "Users", icon: <People /> },
-  { to: "/admin-company-kyc", label: "Company KYC", icon: <Business /> },
-  { to: "/admin-jobs", label: "Job Management", icon: <Work /> },
-  { to: "/admin-subscription-plans", label: "Subscription Plans", icon: <CardMembership />, disabled: true },
-  { to: "/admin-payments", label: "Payments", icon: <Payment />, disabled: true },
-  { to: "/admin-support", label: "Support Tickets", icon: <SupportAgent />, disabled: true },
-  { to: "/admin-reports", label: "Reports", icon: <Assessment /> },
-  { to: "/admin-settings", label: "Settings", icon: <SettingsIcon /> },
+  { to: "/admin/dashboard", label: "Dashboard", icon: <DashboardIcon /> },
+  { to: "/admin/users", label: "Users", icon: <People /> },
+  { to: "/admin/company-kyc", label: "Company KYC", icon: <Business /> },
+  { to: "/admin/jobs", label: "Job Management", icon: <Work /> },
+  { to: "/admin/subscription-plans", label: "Subscription Plans", icon: <CardMembership />, disabled: true },
+  { to: "/admin/payments", label: "Payments", icon: <Payment />, disabled: true },
+  { to: "/admin/support", label: "Support Tickets", icon: <SupportAgent />, disabled: true },
+  { to: "/admin/reports", label: "Reports", icon: <Assessment /> },
+  { to: "/admin/settings", label: "Settings", icon: <SettingsIcon /> },
 ];
 
 function SidebarItem({ item }) {
