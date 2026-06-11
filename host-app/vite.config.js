@@ -37,7 +37,11 @@ export default defineConfig(({ mode }) => {
 					auth_mfe: remoteEntryPath,
 					admin_mfe: adminRemoteEntryPath,
 				},
-				shared: ['react', 'react-dom', 'react-router-dom'],
+				shared: {
+					react: { singleton: true, requiredVersion: '^19.2.6' },
+					'react-dom': { singleton: true, requiredVersion: '^19.2.6' },
+					'react-router-dom': { singleton: true, requiredVersion: '^6.26.0' },
+				},
 			}),
 			{
 				name: 'force-cors',
