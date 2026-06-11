@@ -100,7 +100,7 @@ export default function Users() {
                   </TableCell>
                   <TableCell>{u.joined}</TableCell>
                   <TableCell align="right">
-                    <IconButton color="primary" onClick={() => nav(`/admin/users/${u.id}`)}>
+                    <IconButton color="primary" onClick={() => nav(`/a/users/${u.id}`)}>
                       <Visibility />
                     </IconButton>
                   </TableCell>

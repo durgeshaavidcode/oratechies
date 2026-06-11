@@ -13,16 +13,16 @@ export default function App() {
   return (
     <Routes>
       <Route element={<AdminLayout />}>
-        <Route path="/admin/" element={<Navigate to="/admin/dashboard" replace />} />
-        <Route path="/admin/dashboard" element={<Dashboard />} />
-        <Route path="/admin/users" element={<Users />} />
-        <Route path="/admin/users/:id" element={<UserDetail />} />
-        <Route path="/admin/company-kyc" element={<CompanyKYC />} />
-        <Route path="/admin/company-kyc/:id" element={<CompanyKYCReview />} />
-        <Route path="/admin/jobs" element={<JobManagement />} />
-        <Route path="/admin/reports" element={<Reports />} />
-        <Route path="/admin/settings" element={<Settings />} />
-        {/* <Route path="*" element={<Navigate to="/admin/dashboard" replace />} /> */}
+        <Route path="/a/" element={<Navigate to="/a/dashboard" replace />} />
+        <Route path="/a/dashboard" element={<Dashboard />} />
+        <Route path="/a/users" element={<Users />} />
+        <Route path="/a/users/:id" element={<UserDetail />} />
+        <Route path="/a/company-kyc" element={<CompanyKYC />} />
+        <Route path="/a/company-kyc/:id" element={<CompanyKYCReview />} />
+        <Route path="/a/jobs" element={<JobManagement />} />
+        <Route path="/a/reports" element={<Reports />} />
+        <Route path="/a/settings" element={<Settings />} />
+        {/* <Route path="*" element={<Navigate to="/a/dashboard" replace />} /> */}
       </Route>
     </Routes>
   );
