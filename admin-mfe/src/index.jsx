@@ -1,12 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import { store } from "./store";
+import { theme } from "./theme";
+import App from "./App";
 
-export default function AdminApp() {
-  return <div>Admin Microfrontend</div>;
-}
-
-const rootElement = document.getElementById('_oratechies-root');
-if (rootElement) {
-  const root = ReactDOM.createRoot(rootElement);
-  root.render(<AdminApp />);
-}
+ReactDOM.createRoot(document.getElementById("_oratechies-root")).render(
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ThemeProvider>
+  </Provider>
+);
