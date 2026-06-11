@@ -79,7 +79,7 @@ export default function CompanyKYCReview() {
             <ArrowBack />
           </IconButton>
           <Breadcrumbs>
-            <Link component={RouterLink} to="/company-kyc" underline="hover" sx={{ color: "primary.main", fontWeight: 600 }}>
+            <Link component={RouterLink} to="/admin/company-kyc" underline="hover" sx={{ color: "primary.main", fontWeight: 600 }}>
               Company KYC
             </Link>
             <Typography sx={{ color: "text.primary", fontWeight: 600 }}>Review Company</Typography>
