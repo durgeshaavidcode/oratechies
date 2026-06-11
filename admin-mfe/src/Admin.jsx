@@ -1,19 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import { Provider } from "react-redux";
-import { ThemeProvider, CssBaseline } from "@mui/material";
-import { store } from "./store";
-import { theme } from "./theme";
-import App from "./App";
+import React from 'react';
+import { Provider } from 'react-redux';
+import App from './App.jsx';
+import { store } from './store';
 
-ReactDOM.createRoot(document.getElementById("_oratechies-root")).render(
-  <Provider store={store}>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ThemeProvider>
-  </Provider>
-);
+export default function Admin() {
+	return (
+		<Provider store={store}>
+			<App />
+		</Provider>
+	);
+}
