@@ -1,2 +1,12 @@
+import React from 'react';
+import { Provider } from 'react-redux';
 import App from './App.jsx';
-export default App;
+import { store } from './store';
+
+export default function Admin() {
+	return (
+		<Provider store={store}>
+			<App />
+		</Provider>
+	);
+}
