@@ -23,12 +23,12 @@ export default defineConfig(({ mode }) => {
 			? `https://oratechies.netlify.app/auth-mfe/assets/remoteEntry.js`
 			: `http://${REMOTE_HOST}:5001/remoteEntry.js`;
 
-	const adminRemoteEntryPath = `http://${REMOTE_HOST}:5002/remoteEntry.js`;
+	// const adminRemoteEntryPath = `http://${REMOTE_HOST}:5002/remoteEntry.js`;
 
-	// const adminRemoteEntryPath =
-	// 	mode == 'production'
-	// 		? `https://oratechies.netlify.app/admin-mfe/assets/remoteEntry.js`
-	// 		: `http://${REMOTE_HOST}:5002/remoteEntry.js`;
+	const adminRemoteEntryPath =
+		mode == 'production'
+			? `https://oratechies.netlify.app/admin-mfe/assets/remoteEntry.js`
+			: `http://${REMOTE_HOST}:5002/remoteEntry.js`;
 
 	return {
 		plugins: [
